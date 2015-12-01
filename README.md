@@ -15,7 +15,7 @@ To run phoenix you need two files.
 - the phoenix binary
 - a configuration file
 
-You can get phoenix with `go get github.com/sarulabs/phoenix` or download it from [here](https://www.sarulabs.com/downloads/phoenix-1.0).
+You can get phoenix with `go get github.com/sarulabs/phoenix` or download it from [here](https://www.sarulabs.com/downloads/phoenix-1.0.1).
 
 Then it is easy to launch it :
 
@@ -27,8 +27,8 @@ In a Dockerfile it may look like this :
 
 ```
 RUN apt-get install -y wget
-RUN wget https://www.sarulabs.com/downloads/phoenix-1.0
-RUN mv phoenix-1.0 /home/phoenix
+RUN wget https://www.sarulabs.com/downloads/phoenix-1.0.1
+RUN mv phoenix-1.0.1 /home/phoenix
 RUN chmod +x /home/phoenix
 ADD conf.yml /home/conf.yml
 
