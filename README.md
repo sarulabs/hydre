@@ -19,7 +19,7 @@ You can get phoenix with `go get github.com/sarulabs/phoenix` or download it fro
 
 Then it is easy to launch it :
 
-```
+```sh
 phoenix run conf.yml
 ```
 
@@ -39,7 +39,7 @@ CMD ["/home/phoenix", "run", "/home/conf.yml"]
 
 When you launch phoenix, it starts all the daemons (processes) that it handles. But you can decide to stop or restart a daemon :
 
-```
+```sh
 phoenix stop daemon_name conf.yml
 phoenix start daemon_name conf.yml
 ```
