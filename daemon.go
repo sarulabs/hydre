@@ -3,9 +3,10 @@ package main
 import (
 	"io/ioutil"
 	"log"
-	"os"
 	"os/exec"
+	"strconv"
 	"strings"
+	"syscall"
 )
 
 // Daemon holds the daemon configuration and its desired state.
@@ -19,7 +20,7 @@ type Daemon struct {
 }
 
 // EnsureState tries to start or stop a daemon
-// if its state does not match to the d.Enabled value.
+// if its state does not match the Enabled field.
 func (d Daemon) EnsureState() {
 	if d.Enabled != d.IsAlive() {
 		if d.Enabled {
@@ -31,6 +32,7 @@ func (d Daemon) EnsureState() {
 }
 
 // DoStart tries to start the daemon.
+// It returns the result of the daemon start command.
 func (d *Daemon) DoStart() []byte {
 	d.Enabled = true
 	if !d.Quiet {
@@ -40,6 +42,7 @@ func (d *Daemon) DoStart() []byte {
 }
 
 // DoStop tries to stop the daemon.
+// It returns the result of the daemon stop command.
 func (d *Daemon) DoStop() []byte {
 	d.Enabled = false
 	if !d.Quiet {
@@ -48,7 +51,7 @@ func (d *Daemon) DoStop() []byte {
 	return d.Exec(d.Stop)
 }
 
-// Exec executes a command.
+// Exec executes a command and returns its result.
 func (d Daemon) Exec(cmdLine string) []byte {
 	cmd := strings.Split(cmdLine, " ")
 	res, _ := exec.Command(cmd[0], cmd[1:]...).Output()
@@ -56,21 +59,24 @@ func (d Daemon) Exec(cmdLine string) []byte {
 }
 
 // Pid returns the pid of the daemon based on its PidFile.
-// If it can not find the pid of the daemon, it returns -1.
-func (d Daemon) Pid() string {
+func (d Daemon) Pid() (int, error) {
 	b, err := ioutil.ReadFile(d.PidFile)
 	if err != nil {
-		return "-1"
+		return 0, err
 	}
+
 	pid := strings.Trim(string(b), " \n")
-	if pid == "" {
-		return "-1"
-	}
-	return pid
+
+	return strconv.Atoi(pid)
 }
 
-// IsAlive checks if the daemon is running by checking the /proc/ directory.
+// IsAlive checks if the daemon is running by sending a kill signal.
 func (d Daemon) IsAlive() bool {
-	_, err := os.Stat("/proc/" + d.Pid())
+	pid, err := d.Pid()
+	if err != nil {
+		return false
+	}
+
+	err = syscall.Kill(pid, 0)
 	return err == nil
 }

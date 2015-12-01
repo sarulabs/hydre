@@ -2,7 +2,7 @@ package main
 
 import (
 	"os"
-	"os/exec"
+	"syscall"
 	"testing"
 	"time"
 )
@@ -128,8 +128,8 @@ func TestAll(t *testing.T) {
 	// try to kill daemon #2
 	// prev: (1) -- (2) OK
 	// next: (1) -- (2) --
-	pid := master.Daemons["2"].Pid()
-	exec.Command("kill", "-9", pid).Output()
+	pid, _ := master.Daemons["2"].Pid()
+	syscall.Kill(pid, 9)
 
 	Sleep(1)
 
