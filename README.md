@@ -12,7 +12,7 @@ Usually you only run one process in a docker container. It is the best practice.
 - php and nginx
 - a small mail server (postfix + dovecot + spamassassin + amavis + clamav)
 
-A php and nginx example is available [in the example directory](https://github.com/sarulabs/hydre/example/php-nginx).
+A php and nginx example is available [in the example directory](https://github.com/sarulabs/hydre/tree/master/example/php-nginx).
 
 
 ## Behavior
@@ -30,7 +30,8 @@ It is easy to include it in a Dockerfile :
 
 ```
 COPY hydre.yml /home/hydre.yml
-ADD http://github.com/sarulabs/hydre/bin/hydre-2.0.0 /home/hydre
+ADD https://github.com/sarulabs/hydre/releases/download/2.0.0/hydre /home/hydre
+RUN chmod +x /home/hydre
 
 CMD ["/home/hydre", "-c", "/home/hydre.yml"]
 ```
