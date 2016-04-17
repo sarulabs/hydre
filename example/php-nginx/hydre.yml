@@ -1,0 +1,6 @@
+timeout: 3
+daemons:
+    nginx:
+        command: ["nginx", "-g", "daemon off;"]
+    php:
+        command: ["php-fpm"]

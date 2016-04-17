@@ -1,0 +1,9 @@
+timeout: 10
+daemons:
+    daemon1:
+        command: ["start", "daemon1"]
+        stopCommand: ["stop", "daemon1"]
+        pidFile: "path/to/pidfile"
+        logFiles: ["1.log", "2.log"]
+    daemon2:
+        command: ["start", "daemon2"]

@@ -1,0 +1,23 @@
+hash: a509b860c1a2bf456feb135a4b11b2598e32f7a1f9a809c255e9160f9c26838f
+updated: 2016-04-14T21:09:38.480531167+02:00
+imports:
+- name: github.com/codegangsta/cli
+  version: 71f57d300dd6a780ac1856c005c4b518cfd498ec
+- name: github.com/go-yaml/yaml
+  version: a83829b6f1293c91addabc89d0571c246397bbf4
+- name: github.com/gorilla/mux
+  version: 0eeaf8392f5b04950925b8a69fe70f110fa7cbfc
+- name: github.com/hpcloud/tail
+  version: adca23eea0fe20b1e122126bba36bd4207a58e41
+  subpackages:
+  - ratelimiter
+  - util
+  - watch
+  - winfile
+- name: gopkg.in/fsnotify.v1
+  version: 7be54206639f256967dd82fa767397ba5f8f48f5
+- name: gopkg.in/tomb.v1
+  version: c131134a1947e9afd9cecfe11f4c6dff0732ae58
+- name: gopkg.in/yaml.v2
+  version: a83829b6f1293c91addabc89d0571c246397bbf4
+devImports: []
