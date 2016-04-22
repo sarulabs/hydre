@@ -83,10 +83,7 @@ func (d *Daemon) startBackground(cmd *exec.Cmd, stopNotifier chan<- string) {
 	// remove pidfile content to be sure to read the correct value
 	ioutil.WriteFile(d.PidFile, []byte{}, 0777)
 
-	if err := cmd.Run(); err != nil {
-		stopNotifier <- fmt.Sprintf("could not start daemon `%s` : %s", d.Name, err)
-		return
-	}
+	cmd.Run()
 
 	pid := d.readPidFileRetry(500, 10*time.Millisecond)
 	process, _ := os.FindProcess(pid)

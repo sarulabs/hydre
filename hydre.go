@@ -58,7 +58,7 @@ func (h *Hydre) Run() {
 	// avoid zombie processes
 	go h.reap()
 
-	stopNotifier := make(chan string)
+	stopNotifier := make(chan string, 1000)
 
 	for _, d := range h.Daemons {
 		d.Start(stopNotifier)
@@ -71,7 +71,7 @@ func (h *Hydre) Run() {
 
 // reap waits for this process children to finish to avoid zombie processes.
 func (h *Hydre) reap() {
-	c := make(chan os.Signal, 10)
+	c := make(chan os.Signal, 1000)
 
 	signal.Notify(c, syscall.SIGCHLD)
 
