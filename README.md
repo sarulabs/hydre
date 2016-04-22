@@ -30,7 +30,7 @@ It is easy to include it in a Dockerfile :
 
 ```
 COPY hydre.yml /home/hydre.yml
-ADD https://github.com/sarulabs/hydre/releases/download/2.0.0/hydre /home/hydre
+ADD https://github.com/sarulabs/hydre/releases/download/2.0.1/hydre /home/hydre
 RUN chmod +x /home/hydre
 
 CMD ["/home/hydre", "-c", "/home/hydre.yml"]
