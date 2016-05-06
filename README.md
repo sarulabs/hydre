@@ -5,7 +5,7 @@
 [![Coverage](http://gocover.io/_badge/github.com/sarulabs/hydre)](https://gocover.io/github.com/sarulabs/hydre)
 [![codebeat](https://codebeat.co/badges/9cf1bd29-f909-439f-9703-0500c47efa25)](https://codebeat.co/projects/github-com-sarulabs-hydre)
 [![goreport](https://goreportcard.com/badge/github.com/sarulabs/hydre)](https://goreportcard.com/report/github.com/sarulabs/hydre)
-[![download](https://img.shields.io/badge/Download-2.0.1-blue.svg](https://github.com/sarulabs/hydre/releases/download/2.0.1/hydre)
+[![download](https://img.shields.io/badge/Download-2.0.1-blue.svg)](https://github.com/sarulabs/hydre/releases/download/2.0.1/hydre)
 
 
 Hydre allows you to run several commands in a docker container.
