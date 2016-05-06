@@ -5,3 +5,4 @@ import:
 - package: github.com/go-yaml/yaml
 - package: github.com/gorilla/mux
 - package: github.com/hpcloud/tail
+- package: github.com/stretchr/testify

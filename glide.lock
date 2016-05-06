@@ -1,5 +1,5 @@
-hash: 65add28d44e307f81fb8f7527d351e558dceaefe928f1b5976e37564bb7ce44a
-updated: 2016-05-06T22:35:40.218326649+02:00
+hash: 3cdf342ff300e48057387cc1e349f00ac6b076478768f10edb66155f95bfcaee
+updated: 2016-05-06T22:58:49.806200465+02:00
 imports:
 - name: github.com/codegangsta/cli
   version: 75b97d09d9f5792ff997e249a330a3ca28f8b537
@@ -14,6 +14,8 @@ imports:
   - util
   - watch
   - winfile
+- name: github.com/stretchr/testify
+  version: 6cb3b85ef5a0efef77caef88363ec4d4b5c0976d
 - name: gopkg.in/fsnotify.v1
   version: 7be54206639f256967dd82fa767397ba5f8f48f5
 - name: gopkg.in/tomb.v1
