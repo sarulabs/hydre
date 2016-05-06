@@ -1,4 +1,4 @@
-package: github.com/sarulabs/phoenix
+package: github.com/sarulabs/hydre
 import:
 - package: gopkg.in/yaml.v2
 - package: github.com/codegangsta/cli

@@ -1,14 +1,14 @@
-hash: a509b860c1a2bf456feb135a4b11b2598e32f7a1f9a809c255e9160f9c26838f
-updated: 2016-04-14T21:09:38.480531167+02:00
+hash: 65add28d44e307f81fb8f7527d351e558dceaefe928f1b5976e37564bb7ce44a
+updated: 2016-05-06T22:35:40.218326649+02:00
 imports:
 - name: github.com/codegangsta/cli
-  version: 71f57d300dd6a780ac1856c005c4b518cfd498ec
+  version: 75b97d09d9f5792ff997e249a330a3ca28f8b537
 - name: github.com/go-yaml/yaml
   version: a83829b6f1293c91addabc89d0571c246397bbf4
 - name: github.com/gorilla/mux
-  version: 0eeaf8392f5b04950925b8a69fe70f110fa7cbfc
+  version: 9c19ed558d5df4da88e2ade9c8940d742aef0e7e
 - name: github.com/hpcloud/tail
-  version: adca23eea0fe20b1e122126bba36bd4207a58e41
+  version: a30252cb686a21eb2d0b98132633053ec2f7f1e5
   subpackages:
   - ratelimiter
   - util
