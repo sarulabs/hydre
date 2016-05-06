@@ -1,5 +1,12 @@
 # Hydre
 
+[![Build Status](https://travis-ci.org/sarulabs/hydre.svg?branch=master)](https://travis-ci.org/sarulabs/hydre)
+[![GoDoc](https://godoc.org/github.com/sarulabs/hydre?status.svg)](http://godoc.org/github.com/sarulabs/hydre)
+[![Coverage](http://gocover.io/_badge/github.com/sarulabs/hydre)](https://gocover.io/github.com/sarulabs/hydre)
+[![codebeat](https://codebeat.co/badges/9cf1bd29-f909-439f-9703-0500c47efa25)](https://codebeat.co/projects/github-com-sarulabs-hydre)
+[![goreport](https://goreportcard.com/badge/github.com/sarulabs/hydre)](https://goreportcard.com/report/github.com/sarulabs/hydre)
+
+
 Hydre allows you to run several commands in a docker container.
 
 Usually you only run one process in a docker container. It is the best practice. But sometimes you may still want to run several processes in one container because :
