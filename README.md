@@ -1,21 +1,21 @@
 # Hydre
 
+[![download](https://img.shields.io/badge/Download-2.0.1-blue.svg)](https://github.com/sarulabs/hydre/releases/download/2.0.1/hydre)
 [![Build Status](https://travis-ci.org/sarulabs/hydre.svg?branch=master)](https://travis-ci.org/sarulabs/hydre)
 [![GoDoc](https://godoc.org/github.com/sarulabs/hydre?status.svg)](http://godoc.org/github.com/sarulabs/hydre)
 [![Coverage](http://gocover.io/_badge/github.com/sarulabs/hydre)](https://gocover.io/github.com/sarulabs/hydre)
 [![codebeat](https://codebeat.co/badges/9cf1bd29-f909-439f-9703-0500c47efa25)](https://codebeat.co/projects/github-com-sarulabs-hydre)
 [![goreport](https://goreportcard.com/badge/github.com/sarulabs/hydre)](https://goreportcard.com/report/github.com/sarulabs/hydre)
-[![download](https://img.shields.io/badge/Download-2.0.1-blue.svg)](https://github.com/sarulabs/hydre/releases/download/2.0.1/hydre)
 
 
 Hydre allows you to run several commands in a docker container.
 
 Usually you only run one process in a docker container. It is the best practice. But sometimes you may still want to run several processes in one container because :
 
-- the processes are tightly coupled and/or it is really complicated to separate them.
+- the processes are tightly coupled and it is really complicated to separate them.
 - it does not bring anything more to split these processes in different containers in terms of scalability.
 
-#### Use case :
+#### Use cases :
 
 - php and nginx
 - a small mail server (postfix + dovecot + spamassassin + amavis + clamav)
@@ -61,12 +61,12 @@ daemons:
         logFiles: ["/var/log/cool_daemon.access", "/var/log/cool_daemon.error"]
 ```
 
-- ***timeout*** : time in second that daemons have to stop gracefully
+- ***timeout*** : time in seconds that daemons have to stop gracefully
 - ***daemons*** : the definition of the commands you want to execute
     - ***command*** : the unix command that start the program
-    - ***stopCommand*** : a command to stop the program gracefully (optional)
-    - ***pidFile*** : the path to the program pid file (optional)
-    - ***logFiles*** : an array of paths to log files (optional)
+    - ***stopCommand*** : a command to stop the daemon gracefully (optional)
+    - ***pidFile*** : the path to the daemon pid file (optional)
+    - ***logFiles*** : an array containing the paths to the log files (optional)
 
 ### Foreground process
 
