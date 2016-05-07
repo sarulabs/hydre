@@ -59,22 +59,19 @@ func (m *mockDaemon) IsKilled() bool {
 func TestNewHydre(t *testing.T) {
 	h, err := NewHydre("test/good-conf.yml")
 	assert.Nil(t, err)
-	assert.Equal(t, &Hydre{
-		Timeout: 10,
-		Daemons: []Service{
-			&Daemon{
-				Name:        "daemon1",
-				Command:     []string{"start", "daemon1"},
-				StopCommand: []string{"stop", "daemon1"},
-				PidFile:     "path/to/pidfile",
-				LogFiles:    []string{"1.log", "2.log"},
-			},
-			&Daemon{
-				Name:    "daemon2",
-				Command: []string{"start", "daemon2"},
-			},
-		},
-	}, h)
+	assert.Equal(t, 10, h.Timeout)
+	assert.Len(t, h.Daemons, 2)
+	assert.Contains(t, h.Daemons, &Daemon{
+		Name:        "daemon1",
+		Command:     []string{"start", "daemon1"},
+		StopCommand: []string{"stop", "daemon1"},
+		PidFile:     "path/to/pidfile",
+		LogFiles:    []string{"1.log", "2.log"},
+	})
+	assert.Contains(t, h.Daemons, &Daemon{
+		Name:    "daemon2",
+		Command: []string{"start", "daemon2"},
+	})
 
 	h, err = NewHydre("test/bad-conf.yml")
 	assert.NotNil(t, err)
