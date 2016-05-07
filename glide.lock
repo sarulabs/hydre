@@ -1,12 +1,8 @@
-hash: 3cdf342ff300e48057387cc1e349f00ac6b076478768f10edb66155f95bfcaee
-updated: 2016-05-06T22:58:49.806200465+02:00
+hash: 775f936b1f7686e7eb8139ca006cce98b91561c463dbe2c2811593566b5ba65e
+updated: 2016-05-07T22:56:34.680226022+02:00
 imports:
 - name: github.com/codegangsta/cli
-  version: 75b97d09d9f5792ff997e249a330a3ca28f8b537
-- name: github.com/go-yaml/yaml
-  version: a83829b6f1293c91addabc89d0571c246397bbf4
-- name: github.com/gorilla/mux
-  version: 9c19ed558d5df4da88e2ade9c8940d742aef0e7e
+  version: d3a4d5467b9d41ee3b466a3d6684cdc36482e471
 - name: github.com/hpcloud/tail
   version: a30252cb686a21eb2d0b98132633053ec2f7f1e5
   subpackages:
