@@ -1,3 +1,6 @@
+:warning: **NOT MAINTAINED** :warning:
+
+
 # Hydre
 
 [![download](https://img.shields.io/badge/Download-2.0.1-blue.svg)](https://github.com/sarulabs/hydre/releases/download/2.0.1/hydre)
