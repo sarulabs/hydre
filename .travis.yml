@@ -1,15 +1,23 @@
 language: go
 
 go:
-  - 1.5
-  - 1.6
+  - 1.9
   - tip
 
 env:
-  - GO15VENDOREXPERIMENT=1
+  global:
+    - CC_TEST_REPORTER_ID=8b4f8319d189131b35bdf953d6c59f7ce929365cc2cbebc27029d4616195c696
 
 install:
   - go get github.com/Masterminds/glide
   - glide install
 
-script: go test -v $(glide nv)
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script: go test -coverprofile=c.out -v $(glide nv)
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

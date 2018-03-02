@@ -1,15 +1,15 @@
-:warning: **NOT MAINTAINED** :warning:
-
-
 # Hydre
 
+![unmaintained](https://img.shields.io/badge/status-UNMAINTAINED-red.svg)
 [![download](https://img.shields.io/badge/Download-2.0.1-blue.svg)](https://github.com/sarulabs/hydre/releases/download/2.0.1/hydre)
 [![Build Status](https://travis-ci.org/sarulabs/hydre.svg?branch=master)](https://travis-ci.org/sarulabs/hydre)
 [![GoDoc](https://godoc.org/github.com/sarulabs/hydre?status.svg)](http://godoc.org/github.com/sarulabs/hydre)
-[![Coverage](http://gocover.io/_badge/github.com/sarulabs/hydre)](https://gocover.io/github.com/sarulabs/hydre)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1cade37ade7d3ce7fdd2/test_coverage)](https://codeclimate.com/github/sarulabs/hydre/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1cade37ade7d3ce7fdd2/maintainability)](https://codeclimate.com/github/sarulabs/hydre/maintainability)
 [![codebeat](https://codebeat.co/badges/9cf1bd29-f909-439f-9703-0500c47efa25)](https://codebeat.co/projects/github-com-sarulabs-hydre)
 [![goreport](https://goreportcard.com/badge/github.com/sarulabs/hydre)](https://goreportcard.com/report/github.com/sarulabs/hydre)
 
+---
 
 Hydre allows you to run several commands in a docker container.
 
